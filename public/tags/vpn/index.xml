@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VPN on Meower1's Blog</title><link>/tags/vpn/</link><description>Recent content in VPN on Meower1's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 01 Apr 2024 16:27:36 +0330</lastBuildDate><atom:link href="/tags/vpn/index.xml" rel="self" type="application/rss+xml"/><item><title>Hysteria ستاپ کردن پروکسی شخصی</title><link>/posts/hysteria/</link><pubDate>Mon, 01 Apr 2024 16:27:36 +0330</pubDate><guid>/posts/hysteria/</guid><description>مقدمه سلام دوستای عزیز خوش اومدین به اولین آموزش این وبلاگ. این آموزش بهتون یاد میده چطور پروکسی شخصی خودتون رو با استفاده از هسته هیستریا ران کنین
+اول اینکه چرا هیستریا؟ چرا از ویتوری استفاده نکنیم؟ دلیلش اینه که درحال حاظر مصرف ویتوری توی کشور بسیار بالا هست و همین باعث میشه بیشتر مورد هدف فایروال و دوستان فیلترچی قرار بگیره به همین منظور پروتوکل هایی که کمتر مورد استفاده قرار میگیرن دیرتر فیلترمیشن و برای مصارف شخصی بصرفه ترن.</description><content>&lt;h1 id="مقدمه">مقدمه&lt;/h1>
+&lt;p>سلام دوستای عزیز خوش اومدین به اولین آموزش این وبلاگ. این آموزش بهتون یاد میده چطور پروکسی شخصی خودتون رو با استفاده از هسته هیستریا ران کنین&lt;/p>
+&lt;p>اول اینکه چرا هیستریا؟ چرا از ویتوری استفاده نکنیم؟ دلیلش اینه که درحال حاظر مصرف ویتوری توی کشور بسیار بالا هست و همین باعث میشه بیشتر مورد هدف فایروال و دوستان فیلترچی قرار بگیره به همین منظور پروتوکل هایی که کمتر مورد استفاده قرار میگیرن دیرتر فیلترمیشن و برای مصارف شخصی بصرفه ترن.&lt;/p>
+&lt;h2 id="چیا-نیاز-دارم">چیا نیاز دارم؟&lt;/h2>
+&lt;ul>
+&lt;li>یه سرور (vps)&lt;/li>
+&lt;/ul>
+&lt;p>سرورتون باید لوکیشنش خارج باشه چون طبیعتا سرورای ایران مثل نتای ایران فیلتر هستن و بدردمون نمیخورن لوکیشنای پیشنهادی کشورای اروپایی هستن که روتینگ و پینگ بصرفه ای برای ایران دارن مثل المان دانمارک انگلستان فرانسه ترکیه و از این قبیل&lt;/p>
+&lt;p>ترجیها سرور روسیه و امریکا نگیرین روسیه اینستاگرام و سرویسای دیگش تحریمه و امریکا هم پینگ خوبی نمیده&lt;/p>
+&lt;p>سرور های امارات و ترکیه پینگای خوبی میدن و واسه گیم توصیه میشن&lt;/p>
+&lt;p>خب بریم سر ستاپ&lt;/p>
+&lt;h2 id="راه-اندازی">راه اندازی&lt;/h2>
+&lt;p>خب اول اینکه سرورتون رو که خریدین سیستم عامل رو حتما یکی از توضیع های لینوکس بر پایه دبیان انتخاب کنین&lt;/p>
+&lt;ul>
+&lt;li>debain (10/11/12)&lt;/li>
+&lt;li>ubuntu (18/20/22)&lt;/li>
+&lt;/ul>
+&lt;p>و از این قبیل که کارمون رو برای راه اندازی اسون تر میکنن. اگه موقع خرید سرور رو ویندوز یا چیزی خارج از اینا انتخاب کردین معمولا تمام پنلای وی پی اس این امکان رو اراعه میدن که سرور رو دوباره بسازین و سیستم عامل رو تغییر بدین
+(rebuild)&lt;/p>
+&lt;p>خب حالا که سیستم عامل رو نصب کردین برنامه
+cmd
+رو توی ویندوز باز میکنین و کامند زیر رو میزنین&lt;/p>
+&lt;pre tabindex="0">&lt;code>ssh &amp;lt;username&amp;gt;@&amp;lt;server_ip&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>اینجا جای یوزرنیم باید یوزرنیم خودتون رو که توی اطلاعات خرید سرورتون هست وارد کنین که معمولا
+root هست&lt;/p>
+&lt;p>و ایپی سرورتون رو هم همینطور&lt;/p>
+&lt;p>بعد که دستور رو زدین ازتون پسورد سرور رو میخواد که توی اطلاعات خرید سرور هست و واردش میکنین حالا دیگه باید وارد سرور شده باشین&lt;/p>
+&lt;p>اولین دستور هایی که بعد از راه اندازی هر سرور لینوکس میزنین باید این دوتا باشه&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt upgrade -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>این دوتا دستور پکیج ها یا همون برنامه هایی که روی سیسمتون نصب هست رو بروزرسانی میکنن&lt;/p>
+&lt;p>بعدش باید برای نصب اسکریپت از گیتهاب پکیج گیت رو نصب کنین&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt install git -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>خب حالا میریم سراغ اصل کار. برای این مرحله من اومدم با اتوماتیک کردن فرایند ستاپ هیستریا این کارو واستون اب خوردن کردم. بطوری که شما فقط اسکریپت زیر رو نصب و اجرا میکنین و نوع پروکسی ای که میخواین براتون راه اندازی کنه رو انتخاب میکنین&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git clone https://github.com/meower1/Supernova
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>خب این میاد پوشه ای که اسکریپت راه اندازی داخلشه رو از گیتهاب واستون کپی میکنه. حالا با کامند زیر واردش میشیم و اجراش میکنیم&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cd Supernova/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo chmod +x supernova.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./supernova.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>حالا اسکریپت اجرا میشه و باید مشابه عکس زیر توی این منو باشین
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/2.png?raw=true" alt="Menu">&lt;/p>
+&lt;p>خب الان همونطور که واضحه گرینه اول برای ما هیستریا رو راه اندازی میکنه پس گزینه 1 رو توی ترمینال تایپ میکنیم.
+طریقه کارکرد اسکریپت اینطور هست که چک میکنه داکر که یک ابزار امنیتی/کاربردی هست اگه روی سیستمتون نصب نبود نصبش میکنه و بعدش توی مسیر زیر کانفیگ هیستریا رو براتون با تنظیمات مناسب میسازه و هسته رو از داخل کانتینر داکر اجرا میکنه. نیازی نیست متوجه بشین پاراگراف بالا رو صرفا برای کسایی که علاقه مند هستن که بدونن&lt;/p>
+&lt;p>مسیر کانفیگ هیستریا&lt;/p>
+&lt;p>&lt;code>/root/Supernova/hysteria/config.yaml&lt;/code>&lt;/p>
+&lt;p>بعد از اجرای اسکریپت بهمون لینک رو میده که با&lt;/p>
+&lt;p>&lt;code>hy2://link&lt;/code>&lt;/p>
+&lt;p>شروع میشه. اون رو کپی میکنیم و یکی از برنامه های زیر رو برای اجرا نصب میکنیم&lt;/p>
+&lt;ul>
+&lt;li>Android :
+&lt;a href="https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/download/1.2.9/NB4A-1.2.9-arm64-v8a.apk">Nekobox&lt;/a>&lt;/li>
+&lt;li>Windows :
+&lt;a href="https://github.com/MatsuriDayo/nekoray/releases/download/3.26/nekoray-3.26-2023-12-09-windows64.zip">Nekoray&lt;/a>&lt;/li>
+&lt;li>Linux (Debian based):
+&lt;a href="https://github.com/MatsuriDayo/nekoray/releases/download/3.26/nekoray-3.26-2023-12-09-debian-x64.deb">Nekoray&lt;/a>&lt;/li>
+&lt;li>Ios/MacOS :
+&lt;a href="https://apps.apple.com/us/app/streisand/id6450534064">Streisand&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>بعد از کپی کردن لینکی که توی سرورمون دریافت کردیم و نصب برنامه واردش میشیم و به این صورت عمل میکنیم&lt;/p>
+&lt;p>&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa1.jpg?raw=true" alt="nekobox1">
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa2_fix.jpg?raw=true" alt="nekobox2">&lt;/p>
+&lt;p>الان یه پروفایل جدید واسمون اضافه میشه. روش کلیک میکنیم و دکمه موشک پایین صفحه رو میزنیم به همین سادگی!&lt;/p>
+&lt;p>روی ویندوز باید اول هسته رو به سینگ باکس تغییر بدیم بعد میتونیم وصل بشیم&lt;/p>
+&lt;p>&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa4_fix.jpg?raw=true" alt="nekoray1">
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa4.jpg?raw=true" alt="nekoray2">&lt;/p>
+&lt;p>برای ایفون هم شبیه اندروید عمل میکنین چیز خاصی نداره
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa11.jpg?raw=true" alt="streisand1">&lt;/p>
+&lt;p>برای مکبوک گزینه تان مود کار نمیکنه و باید از یک برنامه جانبی به اسم
+proxifier
+کمک بگیریم. طریقه کارکردش اینطور هست که ما داخل نکوری به کانفیگ که وصل شدیم برای اینکه کل سیستم بتونه از کانفیگ استفاده کنه تمام سیستم رو با برنامه پروکسیفایر پروکسی میکنیم&lt;/p>
+&lt;p>برنامه رو از اینجا نصب میکنیم
+&lt;a href="https://www.proxifier.com/download/ProxifierMac.dmg">Proxifier&lt;/a>&lt;/p>
+&lt;p>دانلود که کردیم وارد برنامه میشیم. ازمون کلید برای فعالسازی میخواد که این رو وارد میکنیم&lt;/p>
+&lt;pre tabindex="0">&lt;code>3CWNN-WYTP4-SD83W-ASDFR-84KEA
+&lt;/code>&lt;/pre>&lt;p>وارد که شدین طبق تصاویر عمل کنین
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa5.jpg?raw=true" alt="nekoray1">
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa6.jpg?raw=true" alt="nekoray2">
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa7.jpg?raw=true" alt="nekoray3">
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa8.jpg?raw=true" alt="nekoray4">
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa9.jpg?raw=true" alt="nekoray5">
+&lt;img src="https://github.com/meower1/Supernova/blob/main/img/moa10.jpg?raw=true" alt="nekoray6">&lt;/p>
+&lt;p>الان تمام سیستمتون باید پروکسی شده باشه و بتونین از فیلترشکنتون برای برنامه های دیگه هم استفاده کنین&lt;/p>
+&lt;h2 id="تنظیمات-هیستریا">تنظیمات هیستریا&lt;/h2>
+&lt;p>اینجا چندتا کامند بدرد بخور برای مدیریت سرویس هیستریا بهتون میگم
+برای متوقف کردن و راه اندازی دوباره&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo docker stop hysteria
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker start hysteria
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>برای پاک کردن هیستریا&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo docker rm -f hysteria
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>چک کردن لاگ ها برای رفع ایراد&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo docker logs hysteria
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>
