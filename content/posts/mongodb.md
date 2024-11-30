@@ -1,16 +1,11 @@
-\---
-
+---
 title: "معرفی دیتابیس مانگو با چندتا مثال باحال"
-
 subtitle:
-
 date: 2024-04-01T16:27:36+03:30
-
 tags: ["mongodb", "database", "nosql"]
-
 language: fa
-
-\---
+thumbnail: "images/mongodb_thumbnail.png"
+---
 
 # مقدمه
 
