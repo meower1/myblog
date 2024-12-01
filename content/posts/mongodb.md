@@ -67,7 +67,7 @@ WHERE r.name = 'Pizza Palace';
 
 ```
 
-![image-20241201000205595](images/vscodemongo.png)
+![image-20241201000205595](/images/vscodemongo.png)
 
 درصورتی که در دیتابیس mongodb رکورد مرتبط با دیتا بصورت یکجا ذخیره میشود و یک query برای گرفتن تمام این رکورد زده شده که باعث افزایش performance در این مورد میشود
 
@@ -153,7 +153,7 @@ volumes:
 
   این افزونه vscode هم یه رابط گرافیکی در اختیارتون قرار میده که مثل Mongodb C ompass میتونین ازش استفاده کنین.
 
-  ![image-20241201004611311](images/vscodemongo.png)
+  ![image-20241201004611311](/images/vscodemongo.png)
 
 ## بحث foreign key و join کردن دیتا توی mongodb چطور میشه؟
 
