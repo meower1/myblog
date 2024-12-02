@@ -1,0 +1,177 @@
+/* Dark mode */
+:root {
+  --syntax-bg: #2d2d2d;
+  --syntax-fg: #f8f8f2;
+  --syntax-comment: #888888;
+  --syntax-keyword: #ff79c6;
+  --syntax-string: #f1fa8c;
+  --syntax-number: #bd93f9;
+  --syntax-variable: #50fa7b;
+  --syntax-table: #f8f8f2;
+  --syntax-property: #66d9ef;
+  --mongo-property: #66d9ef; /* Light blue */
+  --mongo-method: #50fa7b; /* Green */
+  --mongo-string: #f1fa8c; /* Yellow */
+  --mongo-number: #bd93f9; /* Purple */
+  --mongo-keyword: #ff79c6; /* Pink */
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --syntax-bg: #f5f5f5;
+  --syntax-fg: #24292e;
+  --syntax-comment: #6a737d;
+  --syntax-keyword: #d73a49;
+  --syntax-string: #032f62;
+  --syntax-number: #005cc5;
+  --syntax-variable: #22863a;
+  --syntax-table: #24292e;
+  --syntax-property: #005cc5;
+  --mongo-property: #0550ae; /* Dark blue */
+  --mongo-method: #116329; /* Dark green */
+  --mongo-string: #0a3069; /* Dark blue-gray */
+  --mongo-number: #4b2294; /* Dark purple */
+  --mongo-keyword: #cf222e; /* Dark red */
+  --shell-command: #0550ae; /* Dark blue for commands */
+  --shell-function: #116329; /* Dark green for functions */
+  --shell-string: #0a3069; /* Dark blue-gray for strings */
+  --shell-number: #4b2294; /* Dark purple for numbers */
+  --shell-variable: #953800; /* Brown for variables */
+}
+
+/* Light mode with higher specificity */
+html[data-theme="light"] {
+  --syntax-bg: #f5f5f5 !important;
+  --syntax-fg: #24292e !important;
+  --syntax-comment: #6a737d !important;
+  --syntax-keyword: #d73a49 !important;
+  --syntax-string: #032f62 !important;
+  --syntax-number: #005cc5 !important;
+  --syntax-variable: #22863a !important;
+  --syntax-table: #24292e !important;
+  --syntax-property: #005cc5 !important;
+  --mongo-property: #0550ae !important; /* Dark blue */
+  --mongo-method: #116329 !important; /* Dark green */
+  --mongo-string: #0a3069 !important; /* Dark blue-gray */
+  --mongo-number: #4b2294 !important; /* Dark purple */
+  --mongo-keyword: #cf222e !important; /* Dark red */
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  background: var(--syntax-bg) !important;
+  color: var(--syntax-fg) !important;
+}
+
+/* Enforce styles on code blocks in light mode */
+html[data-theme="light"] pre[class*="language-"],
+html[data-theme="light"] code[class*="language-"] {
+  background: var(--syntax-bg) !important;
+  color: var(--syntax-fg) !important;
+}
+
+html[data-theme="light"] .token.keyword,
+html[data-theme="light"] .token.operator {
+  color: var(--syntax-keyword) !important;
+}
+
+html[data-theme="light"] .token.string {
+  color: var(--syntax-string) !important;
+}
+
+html[data-theme="light"] .token.number {
+  color: var(--syntax-number) !important;
+}
+
+/* SQL syntax */
+.language-sql {
+  color: var(--syntax-fg) !important;
+}
+
+.language-sql .keyword {
+  color: var(--syntax-keyword) !important;
+}
+
+.language-sql .table,
+.language-sql .identifier {
+  color: var(--syntax-table) !important;
+}
+
+.language-sql .column,
+.language-sql .property {
+  color: var(--syntax-property) !important;
+}
+
+/* MongoDB shell syntax */
+.language-js .token.property,
+.language-shell .token.property {
+  color: var(--mongo-property) !important;
+}
+
+.language-js .token.method,
+.language-shell .token.method {
+  color: var(--mongo-method) !important;
+}
+
+.language-js .token.punctuation,
+.language-shell .token.punctuation {
+  color: var(--syntax-fg) !important;
+}
+
+.language-js .token.number,
+.language-shell .token.number {
+  color: var(--mongo-number) !important;
+}
+
+.language-js .token.string,
+.language-shell .token.string {
+  color: var(--mongo-string) !important;
+}
+
+/* MongoDB specific */
+.language-js .token.object-property,
+.language-shell .token.object-property {
+  color: var(--mongo-property) !important;
+}
+
+.language-js .token.function,
+.language-shell .token.function {
+  color: var(--mongo-keyword) !important;
+}
+
+/* Shell command highlighting for light mode */
+[data-theme="light"] .language-sh .token.function,
+[data-theme="light"] .language-shell .token.function {
+  color: var(--shell-function) !important;
+}
+
+[data-theme="light"] .language-sh .token.keyword,
+[data-theme="light"] .language-shell .token.keyword {
+  color: var(--shell-command) !important;
+}
+
+[data-theme="light"] .language-sh .token.string,
+[data-theme="light"] .language-shell .token.string {
+  color: var(--shell-string) !important;
+}
+
+[data-theme="light"] .language-sh .token.number,
+[data-theme="light"] .language-shell .token.number {
+  color: var(--shell-number) !important;
+}
+
+[data-theme="light"] .language-sh .token.operator,
+[data-theme="light"] .language-shell .token.operator {
+  color: var(--shell-variable) !important;
+}
+
+/* MongoDB shell specific */
+[data-theme="light"] .language-sh .token.property,
+[data-theme="light"] .language-shell .token.property {
+  color: var(--shell-command) !important;
+}
+
+[data-theme="light"] .language-sh .token.punctuation,
+[data-theme="light"] .language-shell .token.punctuation {
+  color: var(--shell-variable) !important;
+}
