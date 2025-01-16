@@ -14,6 +14,7 @@ cover: "/images/adminer.png"
 ### چی هست این adminer؟
 
 این adminer یه ابزاره که یک رابط کاربری تحت وب (webui) در اختیارتون میزاره که میتونین باهاش دیتابیستون رو مدیریت کنین. مثل pgadmin یا mysql workbech و ابزارای مشابهش.
+adminer چندین تا دیتابیس از جمله mysql, postgresql, oracle, etc رو ساپورت میکنه
 
 ### مزیتش چیه؟
 
